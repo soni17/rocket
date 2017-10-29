@@ -3,6 +3,12 @@ require_relative "rocket"
 
 class RocketTest < Minitest::Test
 
+  def test_initialize_method_without_providing_options_hash
+  end
+
+  def test_initialize_method_by_providing_options_hash
+  end
+
   def test_name_getter_method
   end
 
