@@ -42,6 +42,9 @@ class RocketTest < Minitest::Test
   end
 
   def test_flying_getter_method
+    result = @rocket.flying?
+    expected = true
+    assert_equal(expected, result)
   end
 
   def test_lift_off_method_when_rocket_is_flying
