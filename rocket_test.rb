@@ -74,9 +74,16 @@ class RocketTest < Minitest::Test
   end
 
   def test_status_method_when_rocket_is_flying
+    result = @rocket.status
+    expected = "Rocket coolRocket is flying through the sky!"
+    assert_equal(expected, result)
   end
 
   def test_status_method_when_rocket_is_on_land
+    @rocket = Rocket.new( { name: "coolRocket" , colour: "red" , flying: false } )
+    result = @rocket.status
+    expected = "Rocket coolRocket is ready for lift off!"
+    assert_equal(expected, result)
   end
 
 end
