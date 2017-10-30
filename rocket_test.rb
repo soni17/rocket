@@ -65,6 +65,13 @@ class RocketTest < Minitest::Test
     assert_equal(expected, result)
   end
 
+  def test_colour_setter_method_for_non_strings
+    @rocket.colour = 1245
+    result = @rocket.colour.class
+    expected = String
+    assert_equal(expected, result)
+  end
+
   def test_flying_getter_method
     result = @rocket.flying?
     expected = true
