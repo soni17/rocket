@@ -54,12 +54,23 @@ class RocketTest < Minitest::Test
   end
 
   def test_lift_off_method_when_rocket_is_on_land
+    @rocket = Rocket.new( { name: "coolRocket" , colour: "red" , flying: false } )
+    result = @rocket.lift_off
+    expected = true
+    assert_equal(expected, result)
   end
 
   def test_land_method_when_rocket_is_flying
+    result = @rocket.land
+    expected = true
+    assert_equal(expected, result)
   end
 
   def test_land_method_when_rocket_is_on_land
+    @rocket = Rocket.new( { name: "coolRocket" , colour: "red" , flying: false } )
+    result = @rocket.land
+    expected = false
+    assert_equal(expected, result)
   end
 
   def test_status_method_when_rocket_is_flying
