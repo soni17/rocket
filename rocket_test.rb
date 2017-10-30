@@ -22,6 +22,10 @@ class RocketTest < Minitest::Test
   end
 
   def test_name_setter_method
+    @rocket.name = "testSetter"
+    result = @rocket.name
+    expected = "testSetter"
+    assert_equal(expected, result)
   end
 
   def test_colour_getter_method
