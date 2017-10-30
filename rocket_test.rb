@@ -3,6 +3,12 @@ require_relative "rocket"
 
 class RocketTest < Minitest::Test
 
+  def setup
+    @rocket = Rocket.new({ name: coolRocket,
+                          colour: "red",
+                          flying: true })
+  end
+
   def test_initialize_method_without_providing_options_hash
   end
 
