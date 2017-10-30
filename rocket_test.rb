@@ -4,7 +4,7 @@ require_relative "rocket"
 class RocketTest < Minitest::Test
 
   def setup
-    @rocket = Rocket.new({ name: coolRocket,
+    @rocket = Rocket.new({ name: "coolRocket",
                           colour: "red",
                           flying: true })
   end
@@ -16,6 +16,9 @@ class RocketTest < Minitest::Test
   end
 
   def test_name_getter_method
+    result = @rocket.name
+    expected = "coolRocket"
+    assert_equal(expected, result)
   end
 
   def test_name_setter_method
