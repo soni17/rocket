@@ -9,6 +9,8 @@ class RocketTest < Minitest::Test
                           flying: true })
   end
 
+
+
   def test_initialize_method_assigns_name_when_options_not_provided
     @rocket = Rocket.new()
     result = (@rocket.name != nil)
@@ -40,6 +42,13 @@ class RocketTest < Minitest::Test
     @rocket.name = "testSetter"
     result = @rocket.name
     expected = "testSetter"
+    assert_equal(expected, result)
+  end
+
+  def test_name_setter_method_for_non_strings
+    @rocket.name = 1245
+    result = @rocket.name.class
+    expected = String
     assert_equal(expected, result)
   end
 
