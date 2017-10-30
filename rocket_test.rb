@@ -24,7 +24,33 @@ class RocketTest < Minitest::Test
     assert_equal(expected, result)
   end
 
-  
+  def test_initialize_for_non_string_name
+    @rocket = Rocket.new(name: 12345)
+    result = @rocket.name.class
+    expected = String
+    assert_equal(expected, result)
+  end
+
+  def test_initialize_for_non_string_colour
+    @rocket = Rocket.new(colour: 45.5)
+    result = @rocket.colour.class
+    expected = String
+    assert_equal(expected, result)
+  end
+
+  def test_initialize_for_non_true_flying_variable
+    @rocket = Rocket.new(flying: "hello")
+    result = @rocket.flying?.class
+    expected = TrueClass
+    assert_equal(expected, result)
+  end
+
+  def test_initialize_for_non_false_flying_variable
+    @rocket = Rocket.new(flying: "hello")
+    result = @rocket.flying?.class
+    expected = FalseClass
+    assert_equal(expected, result)
+  end
 
   # test initialize to make sure it assigns the variables if not assigned during instantiation
   def test_initialize_method_assigns_name_when_options_not_provided
