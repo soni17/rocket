@@ -9,10 +9,25 @@ class RocketTest < Minitest::Test
                           flying: true })
   end
 
-  def test_initialize_method_without_providing_options_hash
+  def test_initialize_method_assigns_name_when_options_not_provided
+    @rocket = Rocket.new()
+    result = (@rocket.name != nil)
+    expected = true
+    assert_equal(expected, result)
   end
 
-  def test_initialize_method_by_providing_options_hash
+  def test_initialize_method_assigns_colour_when_options_not_provided
+    @rocket = Rocket.new()
+    result = (@rocket.colour != nil)
+    expected = true
+    assert_equal(expected, result)
+  end
+
+  def test_initialize_method_assigns_flying_value_when_options_not_provided
+    @rocket = Rocket.new()
+    result = (@rocket.flying? != nil)
+    expected = true
+    assert_equal(expected, result)
   end
 
   def test_name_getter_method
